@@ -116,31 +116,31 @@ const App = () => {
                 codeLink: "https://github.com/ZionClouds/ZionDataFusionAI",
               },
               {
-                title: "ZRedactor",
+                title: "Knowledge Base",
                 description:
-                  "Zredactor is a tool designed to automatically identify and redact sensitive information or Personally Identifiable Information (PII) from documents to ensure data privacy and compliance. It streamlines the process of safeguarding confidential data, making it ideal for businesses and organizations handling sensitive information.",
+                  "The ZionAI project showcases how to extract question & answer pairs out of documents using Generative AI. It provides an end-to-end demonstration of QA extraction and fine-tuning of a large language model (LLM) on Vertex AI. Along the way, the solution utilizes Document AI Character Recognition (OCR), Firestore, Vector Search, Vertex AI Studio, and Cloud Functions.",
                 tags: ["AI", "Analytics"],
-                demoLink: "https://redactor-frontend-391657484843.us-central1.run.app/",
-                codeLink: "https://github.com/ZionClouds/zredactor-v2",
+                demoLink: "https://knowledge-base-app-848342910896.us-central1.run.app/",
+                codeLink: "https://github.com/ZionClouds/ZionAI-GCP-Knowledge-Base",
               },
               {
-                title: "Med Agent",
+                title: "Document Summarizer",
                 description:
-                  "MedAgent leverages workers to process doctor-patient conversations and agents powered by natural language processing models to generate clear and concise summaries of medical notes. This streamlined approach automates the extraction of key details, simplifying and enhancing the accuracy of medical documentation.",
+                  "The Zion AI Document Summarization project demonstrates an end-to-end process for summarizing a corpus of documents. The workflow includes raw document ingestion, text detection, and on-demand summarization using cutting-edge Zion AI services, such as AI Text Processing, Document AI OCR, and BigQuery for storage.",
                 tags: ["AI", "Medical"],
-                demoLink: "https://medflow-jagoh3evy7f-cafrontend.victoriouswave-a4fd2c3d.eastus2.azurecontainerapps.io",
-                codeLink: "https://github.com/ZionClouds/ZionAIMedFlow/tree/easy-auth-UI",
+                demoLink: "https://document-summarizer-app-848342910896.us-central1.run.app/",
+                codeLink: "https://github.com/ZionClouds/ZionAI-GCP-Doc-Summarizer",
               },
               {
-                title: "Think Agent",
+                title: "Knowledge Assistant",
                 description:
-                  "Think Agent is a cutting-edge platform that seamlessly integrates and analyzes diverse data sources, providing actionable insights using advanced AI and machine learning techniques. It empowers businesses to make data-driven decisions with unparalleled efficiency and precision.",
+                  "The ZionAI Knowledge Assistant demonstrates how to extract question-answer pairs and summaries from uploaded documents using Azure services. This end-to-end solution combines document processing, AI-powered search, and OpenAI models to deliver interactive answers to user queries, all accessible via a web or voice interface.",
                 tags: ["ML", "Cloud"],
-                demoLink: "https://datafusionaikt-tqzc-ca.bravepebble-57996cdf.eastus.azurecontainerapps.io",
-                codeLink: "https://github.com/ZionClouds/ZionDataFusionAI",
+                demoLink: "https://zionai-knowledge-assistant.kindpond-7b48492d.eastus.azurecontainerapps.io/",
+                codeLink: "https://github.com/ZionClouds/Zion-Knowledge-Assistant",
               },
               {
-                title: "ZRedactor",
+                title: "Reveal",
                 description:
                   "Zredactor is a tool designed to automatically identify and redact sensitive information or Personally Identifiable Information (PII) from documents to ensure data privacy and compliance. It streamlines the process of safeguarding confidential data, making it ideal for businesses and organizations handling sensitive information.",
                 tags: ["AI", "Analytics"],
