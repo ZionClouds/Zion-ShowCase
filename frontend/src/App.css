@@ -174,7 +174,7 @@
   background-size: cover; */
   min-height: 600px;
   width: 100%;
-  background-color: rgb(194, 194, 255);
+  background: linear-gradient(90deg, #205BF3, #89CDA9);
   position: relative;
   display: flex;
   align-items: center;

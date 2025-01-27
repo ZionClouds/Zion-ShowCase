@@ -29,12 +29,12 @@ const App = () => {
   return (
     <div className="bg-gray-50 min-h-screen text-gray-800">
       {/* Header */}
-      <BlackHeader />
+      <Header />
 
       {/* Hero Section */}
       <header className="bg-blue-900 text-white py-16 text-center hero-projects">
-        <h1 className="hero-text" style={{ color: "black", fontSize: "5em" }}>Zion AI - Demo Projects Showcase</h1>
-        <p className="text-xl mb-8 hero-text" style={{ color: "black", fontSize: "2em" }}>
+        <h1 className="hero-text" style={{ color: "white", fontSize: "5em" }}>Zion AI - Demo Projects Showcase</h1>
+        <p className="text-xl mb-8 hero-text" style={{ color: "white", fontSize: "2em" }}>
           Explore our cutting-edge projects and their code repositories
         </p>
         <div className="flex justify-center gap-4 hero-text " style={{ display: "flex", justifyContent: "center" }}>

@@ -55,16 +55,16 @@ const Header = () => {
         {/* Logo and App Name */}
         <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
           <img src={zionLogo} alt="ZionAI Logo" style={{ width: '120px', marginRight: '10px' }} />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-              UI Project
+              Projects
             </Link>
           </Typography>
         </Box>
 
         {/* Desktop Navigation Menu */}
         <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
-          <Button color="inherit" sx={{ mx: 1 }}>
+          {/* <Button color="inherit" sx={{ mx: 1 }}>
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Home</Link>
           </Button>
           <Button color="inherit" sx={{ mx: 1 }} onClick={handleMenuOpen}>Projects</Button>
@@ -83,12 +83,12 @@ const Header = () => {
           </Button>
           <Button color="inherit" sx={{ mx: 1 }}>
             <Link to="/contact" style={{ textDecoration: 'none', color: 'white' }}>Contact Us</Link>
-          </Button>
+          </Button> */}
           <TextField
             variant="outlined"
             size="small"
             placeholder="Search..."
-            sx={{ ml: 2, backgroundColor: 'white', borderRadius: 1 }}
+            sx={{ ml: 2, backgroundColor: 'white', borderRadius: 1, borderStyle: 'none', outline: 'none' , outlineStyle: 'none', width: '300px' }}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
