@@ -139,6 +139,22 @@ const App = () => {
                 demoLink: "https://datafusionaikt-tqzc-ca.bravepebble-57996cdf.eastus.azurecontainerapps.io",
                 codeLink: "https://github.com/ZionClouds/ZionDataFusionAI",
               },
+              {
+                title: "ZRedactor",
+                description:
+                  "Zredactor is a tool designed to automatically identify and redact sensitive information or Personally Identifiable Information (PII) from documents to ensure data privacy and compliance. It streamlines the process of safeguarding confidential data, making it ideal for businesses and organizations handling sensitive information.",
+                tags: ["AI", "Analytics"],
+                demoLink: "https://redactor-frontend-391657484843.us-central1.run.app/",
+                codeLink: "https://github.com/ZionClouds/zredactor-v2",
+              },
+              {
+                title: "Med Agent",
+                description:
+                  "MedAgent leverages workers to process doctor-patient conversations and agents powered by natural language processing models to generate clear and concise summaries of medical notes. This streamlined approach automates the extraction of key details, simplifying and enhancing the accuracy of medical documentation.",
+                tags: ["AI", "Medical"],
+                demoLink: "https://medflow-jagoh3evy7f-cafrontend.victoriouswave-a4fd2c3d.eastus2.azurecontainerapps.io",
+                codeLink: "https://github.com/ZionClouds/ZionAIMedFlow/tree/easy-auth-UI",
+              },
             ].map((project, idx) => (
               <GradientCardComponent
                 key={idx}
