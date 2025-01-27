@@ -60,15 +60,15 @@ const GradientCardComponent = ({
             startIcon={<LinkIcon />}
             href={demoLink}
             target="_blank"
-            style={{ textTransform: "none", color: "#1E88E5", fontWeight: "bold" , fontSize: "20px" }}
+            style={{ textTransform: "none", backgroundColor: "#57CAA0" , color: "white", fontWeight: "bold" , fontSize: "20px", padding: "12px 24px", borderRadius: "12px"  }}
           >
-            View Demo
+            Explore Project
           </Button>
           <Button
             startIcon={<GitHubIcon />}
             href={codeLink}
             target="_blank"
-            style={{ textTransform: "none", color: "#1E88E5", fontWeight: "bold" , fontSize: "20px"}}
+            style={{ textTransform: "none",backgroundColor: "black" , color: "white", fontWeight: "bold" , fontSize: "20px", padding: "12px 24px", borderRadius: "12px" }}
           >
             View Code
           </Button>

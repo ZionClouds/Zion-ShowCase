@@ -42,7 +42,7 @@ const App = () => {
             <Play style={{ fontSize: "24px", margin: "12px" }} />
             Watch Demo
           </Button>
-          <Button style={{ color: "white", backgroundColor: "transparent", padding: "12px 24px", borderRadius: "32px", fontSize: "20px", margin: "12px", border: "2px solid white" }}>
+          <Button href="/projects" style={{ color: "white", backgroundColor: "transparent", padding: "12px 24px", borderRadius: "32px", fontSize: "20px", margin: "12px", border: "2px solid white" }}>
             <RightArrow style={{ fontSize: "24px", margin: "12px" }} />
             Explore Projects
           </Button>
@@ -95,7 +95,7 @@ const App = () => {
                 title: "ZRedactor",
                 description:
                   "Zredactor is a tool designed to automatically identify and redact sensitive information or Personally Identifiable Information (PII) from documents to ensure data privacy and compliance. It streamlines the process of safeguarding confidential data, making it ideal for businesses and organizations handling sensitive information.",
-                tags: ["AI", "Analytics"],
+                tags: ["AI", "Security"],
                 demoLink: "https://redactor-frontend-391657484843.us-central1.run.app/",
                 codeLink: "https://github.com/ZionClouds/zredactor-v2",
               },
@@ -111,7 +111,7 @@ const App = () => {
                 title: "Think Agent",
                 description:
                   "Think Agent is a cutting-edge platform that seamlessly integrates and analyzes diverse data sources, providing actionable insights using advanced AI and machine learning techniques. It empowers businesses to make data-driven decisions with unparalleled efficiency and precision.",
-                tags: ["ML", "Cloud"],
+                tags: ["AI", "Analytics"],
                 demoLink: "https://datafusionaikt-tqzc-ca.bravepebble-57996cdf.eastus.azurecontainerapps.io",
                 codeLink: "https://github.com/ZionClouds/ZionDataFusionAI",
               },

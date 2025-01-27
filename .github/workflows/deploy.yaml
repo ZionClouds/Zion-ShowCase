@@ -57,8 +57,8 @@ jobs:
             --resource-group $RESOURCE_GROUP \
             --environment $ENVIRONMENT_NAME \
             --image $ACR_SERVER/$IMAGE_NAME \
-            --cpu 4 \
-            --memory 8.0Gi \
+            --cpu 2 \
+            --memory 4.0Gi \
             --registry-server $ACR_SERVER \
             --registry-username $(az acr credential show --name $ACR_NAME --query "username" -o tsv) \
             --registry-password $(az acr credential show --name $ACR_NAME --query "passwords[0].value" -o tsv) \
