@@ -167,3 +167,17 @@
   justify-content: space-between;
   flex-direction: column;
 }
+
+.hero-projects {
+  /* background-image: url("https://storage.googleapis.com/uxpilot-auth.appspot.com/bdc126f8ed-9d2b0c3d91a8082e52b3.png"); */
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+  min-height: 600px;
+  width: 100%;
+  background-color: rgb(194, 194, 255);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
