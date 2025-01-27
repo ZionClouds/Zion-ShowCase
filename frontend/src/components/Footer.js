@@ -47,7 +47,7 @@ const Footer = () => {
 
             {/* Footer Text */}
             <Typography variant="body2" sx={{ maxWidth: '400px', mt: 1 }}>
-              © 2024, Zion Cloud Solutions. All Rights Reserved
+              © 2025, Zion Cloud Solutions. All Rights Reserved
             </Typography>
           </Box>
         </Grid>

@@ -38,7 +38,7 @@ const App = () => {
           Explore our cutting-edge projects and their code repositories
         </p>
         <div className="flex justify-center gap-4 hero-text " style={{ display: "flex", justifyContent: "center" }}>
-          <Button style={{ color: "black", backgroundColor: "white", padding: "12px 24px", borderRadius: "32px", fontSize: "20px", margin: "12px" }}>
+          <Button target="_blank" href="https://zionai.com/demo/" style={{ color: "black", backgroundColor: "white", padding: "12px 24px", borderRadius: "32px", fontSize: "20px", margin: "12px" }}>
             {/* <Play style={{ fontSize: "24px", margin: "12px" }} /> */}
             Contact Us
           </Button>
