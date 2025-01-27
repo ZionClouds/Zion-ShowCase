@@ -46,7 +46,8 @@ const GradientCardComponent = ({
               style={{
                 backgroundColor: "#E3F2FD",
                 color: "#1E88E5",
-                fontWeight: "500",
+                fontWeight: "400",
+                fontSize: "20px",
               }}
               size="medium"
             />

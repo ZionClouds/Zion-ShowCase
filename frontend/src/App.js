@@ -96,24 +96,24 @@ const App = () => {
                 description:
                   "Zredactor is a tool designed to automatically identify and redact sensitive information or Personally Identifiable Information (PII) from documents to ensure data privacy and compliance.",
                 tags: ["AI", "Analytics"],
-                demoLink: "#",
-                codeLink: "#",
+                demoLink: "https://redactor-frontend-391657484843.us-central1.run.app/",
+                codeLink: "https://github.com/ZionClouds/zredactor-v2",
               },
               {
                 title: "Med Agent",
                 description:
-                  "Summarizing notes from a conversation between doctor and patient",
+                  "Summarizing notes from a conversation between a doctor and a patient can be streamlined using Azure Cognitive Services, particularly Azure AI features like Speech to Text, Text Analytics, and Language Understanding (LUIS). ",
                 tags: ["AI", "Medical"],
-                demoLink: "#",
-                codeLink: "#",
+                demoLink: "https://medflow-jagoh3evy7f-cafrontend.victoriouswave-a4fd2c3d.eastus2.azurecontainerapps.io",
+                codeLink: "https://github.com/ZionClouds/ZionAIMedFlow/tree/easy-auth-UI",
               },
               {
                 title: "Think Agent",
                 description:
                   "Think Agent is a cutting-edge platform that seamlessly integrates and analyzes diverse data sources, providing actionable insights using advanced AI and machine learning techniques. It empowers businesses to make data-driven decisions with unparalleled efficiency and precision.",
                 tags: ["ML", "Cloud"],
-                demoLink: "#",
-                codeLink: "#",
+                demoLink: "https://datafusionaikt-tqzc-ca.bravepebble-57996cdf.eastus.azurecontainerapps.io",
+                codeLink: "https://github.com/ZionClouds/ZionDataFusionAI",
               },
             ].map((project, idx) => (
               <GradientCardComponent

@@ -1,0 +1,75 @@
+name: Deploy Docker to Azure Container Apps
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write  # Required for OIDC authentication
+      contents: read
+
+    env:
+      ACR_NAME: "zionaiuiacr"
+      RESOURCE_GROUP: "rg-budget-staging-eastus"
+      CONTAINER_APP_NAME: "zionai-showcase"
+      ENVIRONMENT_NAME: "zionai-ui-env"
+      IMAGE_NAME: "zionai-projects-website:latest"
+      ACR_SERVER: "zionaiuiacr.azurecr.io"
+      REGION: "eastus"
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Authenticate with Azure
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Step 3: Enable ACR Admin Credentials
+      - name: Enable ACR Admin Credentials
+        run: |
+          az acr update -n $ACR_NAME --admin-enabled true
+
+      # Step 4: Build and Push Docker Image to ACR
+      - name: Build and Push Docker Image
+        run: |
+          az acr login --name $ACR_NAME
+          docker build --no-cache -t $ACR_SERVER/$IMAGE_NAME .
+          docker push $ACR_SERVER/$IMAGE_NAME
+
+      # Step 5: Deploy to Azure Container App
+      - name: Deploy to Azure Container App
+        run: |
+          az containerapp create \
+            --name $CONTAINER_APP_NAME \
+            --resource-group $RESOURCE_GROUP \
+            --environment $ENVIRONMENT_NAME \
+            --image $ACR_SERVER/$IMAGE_NAME \
+            --cpu 4 \
+            --memory 8.0Gi \
+            --registry-server $ACR_SERVER \
+            --registry-username $(az acr credential show --name $ACR_NAME --query "username" -o tsv) \
+            --registry-password $(az acr credential show --name $ACR_NAME --query "passwords[0].value" -o tsv) \
+            --ingress external \
+            --target-port 8080
+
+      # Step 6: Verify Deployment
+      - name: Get Deployment URL
+        run: |
+          az containerapp show \
+            --name $CONTAINER_APP_NAME \
+            --resource-group $RESOURCE_GROUP \
+            --query "properties.configuration.ingress.fqdn" \
+            -o tsv
