@@ -46,7 +46,7 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           az acr login --name $ACR_NAME
-          docker build --no-cache -t $ACR_SERVER/$IMAGE_NAME .
+          docker build --no-cache -t $ACR_SERVER/$IMAGE_NAME ./frontend
           docker push $ACR_SERVER/$IMAGE_NAME
 
       # Step 5: Deploy to Azure Container App

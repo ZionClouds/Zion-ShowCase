@@ -94,7 +94,7 @@ const App = () => {
               {
                 title: "ZRedactor",
                 description:
-                  "Zredactor is a tool designed to automatically identify and redact sensitive information or Personally Identifiable Information (PII) from documents to ensure data privacy and compliance.",
+                  "Zredactor is a tool designed to automatically identify and redact sensitive information or Personally Identifiable Information (PII) from documents to ensure data privacy and compliance. It streamlines the process of safeguarding confidential data, making it ideal for businesses and organizations handling sensitive information.",
                 tags: ["AI", "Analytics"],
                 demoLink: "https://redactor-frontend-391657484843.us-central1.run.app/",
                 codeLink: "https://github.com/ZionClouds/zredactor-v2",
@@ -102,7 +102,7 @@ const App = () => {
               {
                 title: "Med Agent",
                 description:
-                  "Summarizing notes from a conversation between a doctor and a patient can be streamlined using Azure Cognitive Services, particularly Azure AI features like Speech to Text, Text Analytics, and Language Understanding (LUIS). ",
+                  "MedAgent leverages workers to process doctor-patient conversations and agents powered by natural language processing models to generate clear and concise summaries of medical notes. This streamlined approach automates the extraction of key details, simplifying and enhancing the accuracy of medical documentation.",
                 tags: ["AI", "Medical"],
                 demoLink: "https://medflow-jagoh3evy7f-cafrontend.victoriouswave-a4fd2c3d.eastus2.azurecontainerapps.io",
                 codeLink: "https://github.com/ZionClouds/ZionAIMedFlow/tree/easy-auth-UI",
