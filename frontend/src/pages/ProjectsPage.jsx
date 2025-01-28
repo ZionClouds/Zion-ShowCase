@@ -144,7 +144,7 @@ const App = () => {
                 description:
                   "The project, Zion Ai Reveal, is an interactive  application for dataset exploration and analysis. Users can upload CSV or Excel files, query the data via text or voice input, and receive responses powered by Azure OpenAI. The system dynamically suggests unique queries based on the dataset and provides visualizations and insights. It also features dropdown-style suggested queries for an enhanced user experience.",
                 tags: ["AI", "Analytics", "Medical"],
-                demoLink: "#",
+                demoLink: "https://phanistreamlitwebapp.mangorock-8666da96.eastus.azurecontainerapps.io",
                 codeLink: "https://github.com/ZionClouds/RevealAI",
               },
               {
