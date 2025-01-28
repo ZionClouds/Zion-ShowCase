@@ -33,17 +33,17 @@ const App = () => {
 
       {/* Hero Section */}
       <header className="bg-blue-900 text-white py-16 text-center hero">
-        <h1 className="hero-text" style={{ color: "white", fontSize: "5em" }}>Zion AI - Empowering Innovation in DevOps and AI</h1>
-        <p className="text-xl mb-8 hero-text" style={{ color: "white", fontSize: "2em" }}>
+        <h1 className="hero-text" style={{ color: "white", fontSize: "3em" }}>Zion AI - Empowering Innovation in DevOps and AI</h1>
+        <p className="text-xl mb-8 hero-text" style={{ color: "white", fontSize: "1.25em" }}>
           Explore our cutting-edge projects and solutions that are reshaping the future of technology.
         </p>
         <div className="flex justify-center gap-4 hero-text " style={{ display: "flex", justifyContent: "center" }}>
-          <Button style={{ color: "black", backgroundColor: "white", padding: "12px 24px", borderRadius: "32px", fontSize: "20px", margin: "12px" }}>
-            <Play style={{ fontSize: "24px", margin: "12px" }} />
+          <Button style={{ color: "black", backgroundColor: "white", padding: "12px 24px", borderRadius: "32px", fontSize: "16px", margin: "12px" }}>
+            <Play style={{ fontSize: "16px", margin: "6px" }} />
             Watch Demo
           </Button>
-          <Button href="/projects" style={{ color: "white", backgroundColor: "transparent", padding: "12px 24px", borderRadius: "32px", fontSize: "20px", margin: "12px", border: "2px solid white" }}>
-            <RightArrow style={{ fontSize: "24px", margin: "12px" }} />
+          <Button href="/projects" style={{ color: "white", backgroundColor: "transparent", padding: "12px 24px", borderRadius: "32px", fontSize: "16px", margin: "12px", border: "2px solid white" }}>
+            <RightArrow style={{ fontSize: "16px", margin: "6px" }} />
             Explore Projects
           </Button>
         </div>
@@ -53,10 +53,10 @@ const App = () => {
       <section className="py-16 text-center about">
         <div className="max-w-4xl mx-auto">
           <div className="inline-block bg-blue-100 text-blue-900 rounded-full p-3 mb-6"></div>
-          <h2 className="text-2xl font-bold mb-4 about" style={{ fontSize: "3.5em" }}>About Zion AI</h2>
+          <h2 className="text-2xl font-bold mb-4 about" style={{ fontSize: "2.5em" }}>About Zion AI</h2>
           <p className="text-2xl mb-4 text-gray-600 about"
             style={{
-              fontSize: "2em",
+              fontSize: "1.25em",
               margin: "0 auto",  // Center the <p> horizontally
               maxWidth: "60%",
               textAlign: "center"  // Align text in the center
@@ -74,7 +74,7 @@ const App = () => {
           {/* Center the heading */}
           <h2
             className="text-3xl font-bold text-center mb-12 project-text"
-            style={{ fontSize: "3em" }}
+            style={{ fontSize: "2.5em" }}
           >
             Our Projects
           </h2>
@@ -142,7 +142,7 @@ const App = () => {
               <li>Monitoring & Analytics</li>
             </ul>
             <Button style={{ color: "black", backgroundColor: "white", padding: "12px 24px", borderRadius: "32px", fontSize: "20px", margin: "12px" }}>
-              <Play style={{ fontSize: "24px", margin: "12px" }} />
+              <Play style={{ fontSize: "16px", margin: "6px" }} />
               Watch Demo
             </Button>
           </div>

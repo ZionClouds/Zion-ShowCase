@@ -39,12 +39,10 @@
 
 
 .hero {
-  background-image: url("https://storage.googleapis.com/uxpilot-auth.appspot.com/bdc126f8ed-9d2b0c3d91a8082e52b3.png");
-  /* background-repeat: no-repeat;
-  background-size: cover; */
-  min-height: 600px;
+  background-image: url("./assets/background.png");
+  background-size: auto; 
+  min-height: 500px;
   width: 100%;
-  background-color: blue;
   position: relative;
   display: flex;
   align-items: center;
@@ -54,8 +52,8 @@
 
 .hero::after{
   content: "";
-  background-color: blue;
-  opacity: 0.6;
+  background-color: rgb(2, 4, 31);
+  opacity: 0.3;
   position: absolute;
   top: 0;
   left: 0;
@@ -110,7 +108,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -138,7 +136,7 @@
 
 .devops-inner .devops-img{
   width: 50%;
-  height: 700px;
+  height: 500px;
 }
 
 .devops-img img{
@@ -149,12 +147,12 @@
 
 .devops-text{
   color: white;
-  font-size: 1.75rem;
+  font-size: 1.35rem;
   margin-left: 24px;
 }
 
 .devops-text h1{
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: white;
 }
 
@@ -172,7 +170,7 @@
   /* background-image: url("https://storage.googleapis.com/uxpilot-auth.appspot.com/bdc126f8ed-9d2b0c3d91a8082e52b3.png"); */
   /* background-repeat: no-repeat;
   background-size: cover; */
-  min-height: 600px;
+  min-height: 300px;
   width: 100%;
   background: linear-gradient(90deg, #205BF3, #89CDA9);
   position: relative;

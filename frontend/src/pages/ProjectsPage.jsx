@@ -33,12 +33,12 @@ const App = () => {
 
       {/* Hero Section */}
       <header className="bg-blue-900 text-white py-16 text-center hero-projects">
-        <h1 className="hero-text" style={{ color: "white", fontSize: "5em" }}>Zion AI - Demo Projects Showcase</h1>
-        <p className="text-xl mb-8 hero-text" style={{ color: "white", fontSize: "2em" }}>
+        <h1 className="hero-text" style={{ color: "white", fontSize: "3em" }}>Zion AI - Demo Projects Showcase</h1>
+        <p className="text-xl mb-8 hero-text" style={{ color: "white", fontSize: "1.5em" }}>
           Explore our cutting-edge projects and their code repositories
         </p>
         <div className="flex justify-center gap-4 hero-text " style={{ display: "flex", justifyContent: "center" }}>
-          <Button target="_blank" href="https://zionai.com/demo/" style={{ color: "black", backgroundColor: "white", padding: "12px 24px", borderRadius: "32px", fontSize: "20px", margin: "12px" }}>
+          <Button target="_blank" href="https://zionai.com/demo/" style={{ color: "black", backgroundColor: "white", padding: "6px 20px", borderRadius: "32px", fontSize: "20px", margin: "12px" }}>
             {/* <Play style={{ fontSize: "24px", margin: "12px" }} /> */}
             Contact Us
           </Button>
@@ -74,7 +74,7 @@ const App = () => {
           {/* Center the heading */}
           <h2
             className="text-3xl font-bold text-center mb-12 project-text"
-            style={{ fontSize: "3em" }}
+            style={{ fontSize: "2em" }}
           >
             Our Projects
           </h2>
@@ -86,7 +86,7 @@ const App = () => {
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)", // Ensures 3 columns
-              gap: "2em", // Adds space between cards
+              gap: "1.25em", // Adds space between cards
               justifyContent: "center", // Aligns the grid items horizontally
             }}
           >
