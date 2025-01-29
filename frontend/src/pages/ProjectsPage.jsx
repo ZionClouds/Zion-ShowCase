@@ -26,6 +26,8 @@ import RightArrow from "@mui/icons-material/ArrowForwardIos";
 import "../App.css";
 
 const App = () => {
+    const videoUrl = "https://zionvideostorage.blob.core.windows.net/video/Demo.mp4?sp=r&st=2025-01-28T13:13:39Z&se=2025-10-29T21:13:39Z&spr=https&sv=2022-11-02&sr=b&sig=%2Bkv%2BNvFqyGWyzeCKjeGgMIFU5CSHvnUqHbRHQXI%2FTHQ%3D";
+    
   return (
     <div className="bg-gray-50 min-h-screen text-gray-800">
       {/* Header */}
@@ -151,9 +153,9 @@ const App = () => {
                 title: "DevOps In A Box",
                 description:
                   "DevOps in a Box is a project aimed at simplifying the creation and management of CI/CD pipelines. With a user-friendly drag-and-drop interface, users can easily configure and deploy pipelines without any prior knowledge of DevOps practices.",
-                tags: ["AI", "Medical"],
-                demoLink: "#",
-                codeLink: "https://github.com/ZionClouds/ZionAIMedFlow/tree/easy-auth-UI",
+                tags: ["SecOps", "DevOps", "CI/CD", "Automation"],
+                demoLink: videoUrl,
+                codeLink: "https://github.com/ZionClouds/devops-in-a-box",
               },
             ].map((project, idx) => (
               <GradientCardComponent
