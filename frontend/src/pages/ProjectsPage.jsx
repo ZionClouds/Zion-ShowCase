@@ -102,9 +102,9 @@ const App = () => {
                 codeLink: "https://github.com/ZionClouds/zredactor-v2",
               },
               {
-                title: "Med Agent",
+                title: "Voice Agent",
                 description:
-                  "MedAgent leverages workers to process doctor-patient conversations and agents powered by natural language processing models to generate clear and concise summaries of medical notes. This streamlined approach automates the extraction of key details, simplifying and enhancing the accuracy of medical documentation.",
+                  "Voice Agent leverages workers to process doctor-patient conversations and agents powered by natural language processing models to generate clear and concise summaries of medical notes. This streamlined approach automates the extraction of key details, simplifying and enhancing the accuracy of medical documentation.",
                 tags: ["AI", "Medical"],
                 demoLink: "https://medflow-jagoh3evy7f-cafrontend.victoriouswave-a4fd2c3d.eastus2.azurecontainerapps.io",
                 codeLink: "https://github.com/ZionClouds/ZionAIMedFlow/tree/easy-auth-UI",
