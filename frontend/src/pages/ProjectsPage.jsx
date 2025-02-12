@@ -154,7 +154,7 @@ const App = () => {
                 description:
                   "DevOps in a Box is a project aimed at simplifying the creation and management of CI/CD pipelines. With a user-friendly drag-and-drop interface, users can easily configure and deploy pipelines without any prior knowledge of DevOps practices.",
                 tags: ["SecOps", "DevOps", "CI/CD", "Automation"],
-                demoLink: videoUrl,
+                demoLink: "https://devops-frontend-187517077947.us-central1.run.app/",
                 codeLink: "https://github.com/ZionClouds/devops-in-a-box",
               },
             ].map((project, idx) => (
