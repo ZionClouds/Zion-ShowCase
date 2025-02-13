@@ -31,15 +31,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2: Determine the Container App Name & Image Tag
+      # Step 2: Generate Dynamic Image Tag Based on Date-Time
       - name: Set Environment Variables
         run: |
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)  # Generates timestamp like 20240213-121530
           if [[ "${{ github.ref_name }}" == "main" ]]; then
             CONTAINER_APP_NAME="zionai-showcase"
-            IMAGE_TAG="latest"
+            IMAGE_TAG="latest-$TIMESTAMP"
           elif [[ "${{ github.ref_name }}" == "test" ]]; then
             CONTAINER_APP_NAME="zionai-showcase-test"
-            IMAGE_TAG="test"
+            IMAGE_TAG="test-$TIMESTAMP"
           fi
           echo "CONTAINER_APP_NAME=$CONTAINER_APP_NAME" >> $GITHUB_ENV
           echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
@@ -62,7 +63,7 @@ jobs:
           docker build --no-cache -t $ACR_SERVER/zionai-projects-website:$IMAGE_TAG ./frontend
           docker push $ACR_SERVER/zionai-projects-website:$IMAGE_TAG
 
-      # Step 6: Deploy to Azure Container App (Create if not exists)
+      # Step 6: Deploy to Azure Container App (Always Create New Revision)
       - name: Deploy to Azure Container App
         run: |
           EXISTS=$(az containerapp show --name $CONTAINER_APP_NAME --resource-group $RESOURCE_GROUP --query "name" -o tsv || echo "none")
@@ -85,10 +86,11 @@ jobs:
             az containerapp update \
               --name $CONTAINER_APP_NAME \
               --resource-group $RESOURCE_GROUP \
-              --image $ACR_SERVER/zionai-projects-website:$IMAGE_TAG
+              --image $ACR_SERVER/zionai-projects-website:$IMAGE_TAG \
+              --revision-suffix "rev-$TIMESTAMP"
           fi
 
-      # Step 7: Verify Deployment
+      # Step 7: Verify Deployment & Retrieve URL
       - name: Get Deployment URL
         run: |
           DEPLOYMENT_URL=$(az containerapp show \
