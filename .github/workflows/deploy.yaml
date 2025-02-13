@@ -5,9 +5,11 @@ on:
   push:
     branches:
       - main
+      - test
   pull_request:
     branches:
       - main
+      - test
 
 jobs:
   deploy:
@@ -20,9 +22,7 @@ jobs:
     env:
       ACR_NAME: "zionaiuiacr"
       RESOURCE_GROUP: "rg-budget-staging-eastus"
-      CONTAINER_APP_NAME: "zionai-showcase"
       ENVIRONMENT_NAME: "zionai-ui-env"
-      IMAGE_NAME: "zionai-projects-website:latest"
       ACR_SERVER: "zionaiuiacr.azurecr.io"
       REGION: "eastus"
 
@@ -31,45 +31,69 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2: Authenticate with Azure
+      # Step 2: Determine the Container App Name & Image Tag
+      - name: Set Environment Variables
+        run: |
+          if [[ "${{ github.ref_name }}" == "main" ]]; then
+            CONTAINER_APP_NAME="zionai-showcase"
+            IMAGE_TAG="latest"
+          elif [[ "${{ github.ref_name }}" == "test" ]]; then
+            CONTAINER_APP_NAME="zionai-showcase-test"
+            IMAGE_TAG="test"
+          fi
+          echo "CONTAINER_APP_NAME=$CONTAINER_APP_NAME" >> $GITHUB_ENV
+          echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
+
+      # Step 3: Authenticate with Azure
       - name: Azure Login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # Step 3: Enable ACR Admin Credentials
+      # Step 4: Enable ACR Admin Credentials
       - name: Enable ACR Admin Credentials
         run: |
           az acr update -n $ACR_NAME --admin-enabled true
 
-      # Step 4: Build and Push Docker Image to ACR
+      # Step 5: Build and Push Docker Image to ACR
       - name: Build and Push Docker Image
         run: |
           az acr login --name $ACR_NAME
-          docker build --no-cache -t $ACR_SERVER/$IMAGE_NAME ./frontend
-          docker push $ACR_SERVER/$IMAGE_NAME
+          docker build --no-cache -t $ACR_SERVER/zionai-projects-website:$IMAGE_TAG ./frontend
+          docker push $ACR_SERVER/zionai-projects-website:$IMAGE_TAG
 
-      # Step 5: Deploy to Azure Container App
+      # Step 6: Deploy to Azure Container App (Create if not exists)
       - name: Deploy to Azure Container App
         run: |
-          az containerapp create \
-            --name $CONTAINER_APP_NAME \
-            --resource-group $RESOURCE_GROUP \
-            --environment $ENVIRONMENT_NAME \
-            --image $ACR_SERVER/$IMAGE_NAME \
-            --cpu 3 \
-            --memory 6.0Gi \
-            --registry-server $ACR_SERVER \
-            --registry-username $(az acr credential show --name $ACR_NAME --query "username" -o tsv) \
-            --registry-password $(az acr credential show --name $ACR_NAME --query "passwords[0].value" -o tsv) \
-            --ingress external \
-            --target-port 8080
+          EXISTS=$(az containerapp show --name $CONTAINER_APP_NAME --resource-group $RESOURCE_GROUP --query "name" -o tsv || echo "none")
+          if [[ "$EXISTS" == "none" ]]; then
+            echo "Creating new container app: $CONTAINER_APP_NAME"
+            az containerapp create \
+              --name $CONTAINER_APP_NAME \
+              --resource-group $RESOURCE_GROUP \
+              --environment $ENVIRONMENT_NAME \
+              --image $ACR_SERVER/zionai-projects-website:$IMAGE_TAG \
+              --cpu 3 \
+              --memory 6.0Gi \
+              --registry-server $ACR_SERVER \
+              --registry-username $(az acr credential show --name $ACR_NAME --query "username" -o tsv) \
+              --registry-password $(az acr credential show --name $ACR_NAME --query "passwords[0].value" -o tsv) \
+              --ingress external \
+              --target-port 8080
+          else
+            echo "Updating existing container app: $CONTAINER_APP_NAME"
+            az containerapp update \
+              --name $CONTAINER_APP_NAME \
+              --resource-group $RESOURCE_GROUP \
+              --image $ACR_SERVER/zionai-projects-website:$IMAGE_TAG
+          fi
 
-      # Step 6: Verify Deployment
+      # Step 7: Verify Deployment
       - name: Get Deployment URL
         run: |
-          az containerapp show \
+          DEPLOYMENT_URL=$(az containerapp show \
             --name $CONTAINER_APP_NAME \
             --resource-group $RESOURCE_GROUP \
             --query "properties.configuration.ingress.fqdn" \
-            -o tsv
+            -o tsv)
+          echo "Deployment URL: $DEPLOYMENT_URL"
