@@ -11,11 +11,22 @@ import { LogLevel } from '@azure/msal-browser';
  * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
  */
 
+// Function to dynamically determine redirectUri based on current URL
+const getRedirectUri = () => {
+    const currentURL = window.location.origin;
+    
+    if (currentURL.includes("test")) {
+        return "https://zionai-showcase-test.greensmoke-0d143ed1.eastus.azurecontainerapps.io/";
+    } else {
+        return "https://zionai-showcase.greensmoke-0d143ed1.eastus.azurecontainerapps.io/";
+    }
+};
+
 export const msalConfig = {
     auth: {
         clientId: "40be616f-11e1-4f82-83c7-c800650cce5a", // This is the ONLY mandatory field that you need to supply.
         authority: 'https://login.microsoftonline.com/zionclouds.com', // Replace the placeholder with your tenant subdomain 
-        redirectUri: "https://zionai-showcase.greensmoke-0d143ed1.eastus.azurecontainerapps.io/", // Points to window.location.origin. You must register this URI on Microsoft Entra admin center/App Registration.
+        redirectUri: getRedirectUri(), // Points to window.location.origin. You must register this URI on Microsoft Entra admin center/App Registration.
         postLogoutRedirectUri: '/', // Indicates the page to navigate after logout.
         navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
     },

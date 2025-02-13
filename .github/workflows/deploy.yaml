@@ -31,10 +31,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2: Generate Dynamic Image Tag Based on Date-Time
+      # Step 2: Generate Dynamic Image Tag & Revision Suffix
       - name: Set Environment Variables
         run: |
-          TIMESTAMP=$(date +%Y%m%d-%H%M%S)  # Generates timestamp like 20240213-121530
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S | tr -d ':' | tr '[:upper:]' '[:lower:]') # Remove invalid characters
+          REV_SUFFIX="rev$TIMESTAMP" # Ensure suffix starts with a letter
+
           if [[ "${{ github.ref_name }}" == "main" ]]; then
             CONTAINER_APP_NAME="zionai-showcase"
             IMAGE_TAG="latest-$TIMESTAMP"
@@ -42,8 +44,10 @@ jobs:
             CONTAINER_APP_NAME="zionai-showcase-test"
             IMAGE_TAG="test-$TIMESTAMP"
           fi
+
           echo "CONTAINER_APP_NAME=$CONTAINER_APP_NAME" >> $GITHUB_ENV
           echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
+          echo "REV_SUFFIX=$REV_SUFFIX" >> $GITHUB_ENV
 
       # Step 3: Authenticate with Azure
       - name: Azure Login
@@ -67,6 +71,7 @@ jobs:
       - name: Deploy to Azure Container App
         run: |
           EXISTS=$(az containerapp show --name $CONTAINER_APP_NAME --resource-group $RESOURCE_GROUP --query "name" -o tsv || echo "none")
+
           if [[ "$EXISTS" == "none" ]]; then
             echo "Creating new container app: $CONTAINER_APP_NAME"
             az containerapp create \
@@ -87,7 +92,7 @@ jobs:
               --name $CONTAINER_APP_NAME \
               --resource-group $RESOURCE_GROUP \
               --image $ACR_SERVER/zionai-projects-website:$IMAGE_TAG \
-              --revision-suffix "rev-$TIMESTAMP"
+              --revision-suffix "$REV_SUFFIX"
           fi
 
       # Step 7: Verify Deployment & Retrieve URL
