@@ -97,7 +97,7 @@ const App = () => {
                 title: "ZRedactor",
                 description:
                   "Zredactor is a tool designed to automatically identify and redact sensitive information or Personally Identifiable Information (PII) from documents to ensure data privacy and compliance. It streamlines the process of safeguarding confidential data, making it ideal for businesses and organizations handling sensitive information.",
-                tags: ["AI", "Security"],
+                tags: ["AI", "Security", "Redaction"],
                 demoLink: "https://redactor-frontend-391657484843.us-central1.run.app/",
                 codeLink: "https://github.com/ZionClouds/zredactor-v2",
               },
@@ -146,7 +146,7 @@ const App = () => {
                 description:
                   "The project, Zion Ai Reveal, is an interactive  application for dataset exploration and analysis. Users can upload CSV or Excel files, query the data via text or voice input, and receive responses powered by Azure OpenAI. The system dynamically suggests unique queries based on the dataset and provides visualizations and insights. It also features dropdown-style suggested queries for an enhanced user experience.",
                 tags: ["AI", "Analytics", "Medical"],
-                demoLink: "https://phanistreamlitwebapp.mangorock-8666da96.eastus.azurecontainerapps.io",
+                demoLink: "https://zionai-frontend.yellowsmoke-3c1df465.eastus.azurecontainerapps.io/",
                 codeLink: "https://github.com/ZionClouds/RevealAI",
               },
               {
@@ -156,6 +156,14 @@ const App = () => {
                 tags: ["SecOps", "DevOps", "CI/CD", "Automation"],
                 demoLink: "https://devops-frontend-187517077947.us-central1.run.app/",
                 codeLink: "https://github.com/ZionClouds/devops-in-a-box-backend",
+              },
+              {
+                title: "ZSafe Docs",
+                description:
+                  "Validate whether given Material Safety Data Sheet Document is Compliant or not against OSHA standards.It will evaluate whole document and identifies anomalies if given document if it is Non-Compliant to OSHA Standard which will help users to rectify the anomalies and make the document Compliant to OSHA standards.This workflow uses cutting edge technologies like LLMs, Document AI OCR etc.",
+                tags: ["AI", "LLM", "Compliance"],
+                demoLink: "https://zsafedocs-frontend-424844719658.us-central1.run.app/",
+                codeLink: "https://github.com/ZionClouds/zsafedocs-v2/tree/develop",
               },
             ].map((project, idx) => (
               <GradientCardComponent
