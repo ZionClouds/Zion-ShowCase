@@ -160,7 +160,7 @@ const App = () => {
               {
                 title: "ZSafe Docs",
                 description:
-                  "Validate whether given Material Safety Data Sheet Document is Compliant or not against OSHA standards.It will evaluate whole document and identifies anomalies if given document if it is Non-Compliant to OSHA Standard which will help users to rectify the anomalies and make the document Compliant to OSHA standards.This workflow uses cutting edge technologies like LLMs, Document AI OCR etc.",
+                  "Z-SAFE is an AI-driven OSHA compliance assistant designed to automate Material Data Sheet (MDS) verification, detect anomalies, and provide intelligent reporting. Leveraging a multi-agent AI system, it streamlines regulatory compliance, enhances workplace safety, and reduces manual effort with interactive and explainable AI-driven insights and human in loop system.",
                 tags: ["AI", "LLM", "Compliance"],
                 demoLink: "https://zsafedocs-frontend-424844719658.us-central1.run.app/",
                 codeLink: "https://github.com/ZionClouds/zsafedocs-v2/tree/develop",
