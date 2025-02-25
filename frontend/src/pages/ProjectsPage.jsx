@@ -165,6 +165,13 @@ const App = () => {
                 demoLink: "https://zsafedocs-frontend-424844719658.us-central1.run.app/",
                 codeLink: "https://github.com/ZionClouds/zsafedocs-v2/tree/develop",
               },
+              {
+                title: "FastDock",
+                description: "FastDock is a solution to the challenge of building large AI-based Docker images on resource-constrained laptops. By offloading the build process to cloud infrastructure, FastDock eliminates local hardware limitations, reduces build times, and simplifies deployment. Users simply upload a ZIP with their Dockerfile, application code, and dependencies, and FastDock handles the building and pushing to their selected cloud registry without requiring specialized cloud expertise.",
+                tags: ["Docker", "Cloud Computing", "Containerization", "Resource Optimization"],
+                demoLink: "https://fastdock-187517077947.us-central1.run.app/",
+                codeLink: "https://github.com/ZionClouds/FastDock",
+                }
             ].map((project, idx) => (
               <GradientCardComponent
                 key={idx}
