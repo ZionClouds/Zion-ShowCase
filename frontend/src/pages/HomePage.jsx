@@ -120,7 +120,7 @@ const App = () => {
                                 description:
                                     "Think Agent is a cutting-edge platform that seamlessly integrates and analyzes diverse data sources, providing actionable insights using advanced AI and machine learning techniques. It empowers businesses to make data-driven decisions with unparalleled efficiency and precision.",
                                 tags: ["AI", "Analytics"],
-                                demoLink: "https://datafusionaikt-tqzc-ca.bravepebble-57996cdf.eastus.azurecontainerapps.io",
+                                demoLink: "https://thinkagent-osddng25-ca.wittyfield-545f81a2.eastus.azurecontainerapps.io/",
                                 codeLink: "https://github.com/ZionClouds/ZionDataFusionAI",
                             },
                         ].map((project, idx) => (
