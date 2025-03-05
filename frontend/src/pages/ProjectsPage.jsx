@@ -172,6 +172,13 @@ const App = () => {
                 demoLink: "https://fastdock-187517077947.us-central1.run.app/",
                 codeLink: "https://github.com/ZionClouds/FastDock",
                 }
+                {
+                title: "Zverse AI (Under Construction)",
+                description: "ZVerse AI is an AI-powered chat assistant designed for intelligent document processing, dataset interaction, and compliance checks. It can analyze documents for compliance, answer questions from PDFs, search the web, summarize topics, and generate images from text. Users can also interact with datasets, extracting insights and making data-driven decisions through a chat-based interface. Built with GCP AI models, ZVerse AI ensures seamless automation, efficiency, and accuracy for research, compliance, and content creation.",
+                tags: ["AI", "Model Training", "Deployment"],
+                demoLink: "https://omnivoice-187517077947.us-central1.run.app/",
+                codeLink: "https://github.com/ZionClouds/Zverse-AI"
+                }
             ].map((project, idx) => (
               <GradientCardComponent
                 key={idx}
