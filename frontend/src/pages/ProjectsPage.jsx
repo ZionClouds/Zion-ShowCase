@@ -26,8 +26,8 @@ import RightArrow from "@mui/icons-material/ArrowForwardIos";
 import "../App.css";
 
 const App = () => {
-    const videoUrl = "https://zionvideostorage.blob.core.windows.net/video/Demo.mp4?sp=r&st=2025-01-28T13:13:39Z&se=2025-10-29T21:13:39Z&spr=https&sv=2022-11-02&sr=b&sig=%2Bkv%2BNvFqyGWyzeCKjeGgMIFU5CSHvnUqHbRHQXI%2FTHQ%3D";
-    
+  const videoUrl = "https://zionvideostorage.blob.core.windows.net/video/Demo.mp4?sp=r&st=2025-01-28T13:13:39Z&se=2025-10-29T21:13:39Z&spr=https&sv=2022-11-02&sr=b&sig=%2Bkv%2BNvFqyGWyzeCKjeGgMIFU5CSHvnUqHbRHQXI%2FTHQ%3D";
+
   return (
     <div className="bg-gray-50 min-h-screen text-gray-800">
       {/* Header */}
@@ -171,14 +171,14 @@ const App = () => {
                 tags: ["Docker", "Cloud Computing", "Containerization", "Resource Optimization"],
                 demoLink: "https://fastdock-187517077947.us-central1.run.app/",
                 codeLink: "https://github.com/ZionClouds/FastDock",
-                }
-                {
+              },
+              {
                 title: "Zverse AI (Under Construction)",
                 description: "ZVerse AI is an AI-powered chat assistant designed for intelligent document processing, dataset interaction, and compliance checks. It can analyze documents for compliance, answer questions from PDFs, search the web, summarize topics, and generate images from text. Users can also interact with datasets, extracting insights and making data-driven decisions through a chat-based interface. Built with GCP AI models, ZVerse AI ensures seamless automation, efficiency, and accuracy for research, compliance, and content creation.",
                 tags: ["AI", "Model Training", "Deployment"],
                 demoLink: "https://omnivoice-187517077947.us-central1.run.app/",
                 codeLink: "https://github.com/ZionClouds/Zverse-AI"
-                }
+              }
             ].map((project, idx) => (
               <GradientCardComponent
                 key={idx}
